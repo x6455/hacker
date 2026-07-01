@@ -1,0 +1,66 @@
+name: sizzle_starter
+description: Production-ready template for Flutter applications.
+publish_to: "none"
+version: 0.0.1+1
+resolution: workspace
+
+environment:
+  sdk: ">=3.11.0 <4.0.0"
+  flutter: ">=3.41.1 <4.0.0"
+
+dependencies:
+  # Flutter SDK
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # State management
+  flutter_bloc: 9.1.1
+
+  # Storage
+  shared_preferences: ^2.5.4
+
+  # Utils
+  clock: 1.1.2
+  package_info_plus: ^9.0.0
+
+  # Code Generation
+  json_annotation: ^4.10.0
+  freezed_annotation: ^3.1.0
+
+  # Common
+  common_rest_client:
+    path: ../common/common_rest_client
+  common_database:
+    path: ../common/common_database
+  common_logger:
+    path: ../common/common_logger
+  common_translations:
+    path: ../common/common_translations
+  common_error_reporter:
+    path: ../common/common_error_reporter
+  common_utils:
+    path: ../common/common_utils
+  common_ui:
+    path: ../common/common_ui
+
+dev_dependencies:
+  # Testing
+  flutter_test:
+    sdk: flutter
+
+  # Code Generation
+  build_runner: ^2.11.1
+  json_serializable: ^6.12.0
+  freezed: ^3.2.5
+
+flutter:
+  uses-material-design: true
+
+flutter_intl:
+  enabled: true
+  main_locale: en
+  class_name: GeneratedLocalizations
+  arb_dir: lib/src/core/constant/localization/translations
+  output_dir: lib/src/core/constant/localization/generated

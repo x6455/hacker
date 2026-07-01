@@ -1,0 +1,21 @@
+name: common_ui
+description: "A library of UI components and utilities for Flutter."
+version: 0.0.1
+publish_to: none
+resolution: workspace
+
+environment:
+  sdk: ">=3.11.0 <4.0.0"
+  flutter: ">=3.41.1 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  common_translations:
+    path: ../common_translations
+  collection: ^1.19.1
+  oklab_flutter: ^0.0.1 
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter

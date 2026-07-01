@@ -1,0 +1,18 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "sizzle_starter",
+      "request": "launch",
+      "type": "dart",
+      "cwd": "${workspaceFolder}/app",
+    },
+    {
+      "name": "common_ui",
+      "request": "launch",
+      "type": "dart",
+      "cwd": "${workspaceFolder}/common/common_ui/example",
+      "program": "lib/main.dart"
+    }
+  ]
+}

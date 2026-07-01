@@ -1,0 +1,22 @@
+name: root
+description: "Workspace root"
+
+environment:
+  sdk: ">=3.11.0 <4.0.0"
+  flutter: ">=3.41.0 <4.0.0"
+
+dev_dependencies:
+  sizzle_lints: ^2.1.7
+
+workspace:
+  - app
+  
+  # Common
+  - common/common_utils
+  - common/common_analytics
+  - common/common_logger
+  - common/common_rest_client
+  - common/common_error_reporter
+  - common/common_translations
+  - common/common_ui
+  - common/common_database
