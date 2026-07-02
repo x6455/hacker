@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,10 +17,19 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    // Call immediately when app launches
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      _makeCall();
+      _requestPermissionAndCall();
     });
+  }
+
+  Future<void> _requestPermissionAndCall() async {
+    var status = await Permission.phone.request();
+    
+    if (status.isGranted) {
+      _makeCall();
+    } else if (status.isPermanentlyDenied) {
+      openAppSettings();
+    }
   }
 
   void _makeCall() {
@@ -32,7 +42,7 @@ class _MyAppState extends State<MyApp> {
     return const MaterialApp(
       home: Scaffold(
         body: Center(
-          child: Text('Calling...'),
+          child: Text('Requesting permission...'),
         ),
       ),
     );
